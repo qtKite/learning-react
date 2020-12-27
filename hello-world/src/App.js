@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import './appStyles.css';
-import ClickCounter from './components/ClickCounter';
-import HoverCounter from './components/HoverCounter';
+import ClickCounter2 from './components/ClickCounter2';
+import HoverCounter2 from './components/HoverCounter2';
 
 
 class App extends Component {
@@ -11,10 +11,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-
-          <ClickCounter />
-          <HoverCounter />
-
+          <ClickCounter2/>
+          <HoverCounter2/>
         </header>
       </div>
     );
