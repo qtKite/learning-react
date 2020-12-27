@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import './appStyles.css';
-import ClickCounter2 from './components/ClickCounter2';
-import HoverCounter2 from './components/HoverCounter2';
-import Counter from './components/Counter';
-import { UserProvider } from './components/userContext';
-import CompC from './components/CompC';
+import PostList from './components/PostList';
+import PostForm from './components/PostForm';
 
 
 class App extends Component {
@@ -14,9 +11,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-            <UserProvider value="Jacky">
-              <CompC/>
-            </UserProvider>
+            {/* <PostList/> */}
+            <PostForm/>
         </header>
       </div>
     );

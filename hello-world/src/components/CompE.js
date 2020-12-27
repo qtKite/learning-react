@@ -1,10 +1,17 @@
 import React, { Component } from 'react'
 import CompF from './CompF'
+import UserContext from './userContext'
 
 export class CompE extends Component {
+
+  static contextType = UserContext
+  
   render() {
     return (
-      <CompF/>
+      <div>
+        Comp E Context {this.context}
+        <CompF/>
+      </div>
     )
   }
 }
