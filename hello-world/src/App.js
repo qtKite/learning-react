@@ -5,6 +5,8 @@ import './appStyles.css';
 import ClickCounter2 from './components/ClickCounter2';
 import HoverCounter2 from './components/HoverCounter2';
 import Counter from './components/Counter';
+import { UserProvider } from './components/userContext';
+import CompC from './components/CompC';
 
 
 class App extends Component {
@@ -12,19 +14,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-
-          <Counter>
-            {(count, incrementCount) => (
-              <ClickCounter2 count={count} incrementCount={incrementCount} />
-            )}
-          </Counter>
-
-          <Counter>
-            {(count, incrementCount) => (
-              <HoverCounter2 count={count} incrementCount={incrementCount} />
-            )}
-          </Counter>
-
+            <UserProvider value="Jacky">
+              <CompC/>
+            </UserProvider>
         </header>
       </div>
     );
