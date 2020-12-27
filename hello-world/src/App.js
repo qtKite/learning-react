@@ -4,7 +4,7 @@ import './App.css';
 import './appStyles.css';
 import ClickCounter2 from './components/ClickCounter2';
 import HoverCounter2 from './components/HoverCounter2';
-import User from './components/User';
+import Counter from './components/Counter';
 
 
 class App extends Component {
@@ -12,9 +12,19 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <ClickCounter2/>
-          <HoverCounter2/>
-          <User render={(isLoggedIn) => isLoggedIn ? "Jacky" : "Guest"} />
+
+          <Counter>
+            {(count, incrementCount) => (
+              <ClickCounter2 count={count} incrementCount={incrementCount} />
+            )}
+          </Counter>
+
+          <Counter>
+            {(count, incrementCount) => (
+              <HoverCounter2 count={count} incrementCount={incrementCount} />
+            )}
+          </Counter>
+
         </header>
       </div>
     );
