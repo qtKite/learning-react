@@ -1,16 +1,15 @@
 import React, { createContext, useReducer } from 'react'
 import './App.css';
-import DataFetching1 from './components/DataFetching1';
-import DataFetching2 from './components/DataFetching2';
+
+import UserForm from './components/Custom Hook/UserForm';
 
 
 function App() {
   return (
     <div className="App App-header">
-      <DataFetching2 />
+      <UserForm/>
     </div>
   );
 }
 
 export default App;
-
