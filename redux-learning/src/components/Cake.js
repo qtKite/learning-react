@@ -1,30 +1,63 @@
-import redux from 'react-redux'
-const createStore = redux.createStore()
+import React, { Component } from 'react'
+import {redux} from 'redux'
 
-const BUY_CAKE = 'BUY_CAKE'
+export class Cake extends Component {
 
-function buyCake() {
-    return {
-        type: BUY_CAKE,
-        info: 'First redux action'
+    constructor(props) {
+        super(props)
+
+        this.state = {
+
+        }
     }
-}
 
-// (previousState, action) => newState
+    componentDidMount() {
 
-const initialState = {
-    numOfCakes: 10
-}
+        const createStore = redux.createStore()
 
-const reducer = (state = initialState, action) => {
-    switch (action.type) {
-        case BUY_CAKE: return {
-            ...state,
-            numOfCakes: state.numOfCakes - 1
+        const initialState = {
+            numOfCakes: 10
         }
 
-        default: return state
+        const BUY_CAKE = 'BUY_CAKE'
+
+        function buyCake() {
+            return {
+                type: BUY_CAKE,
+                info: 'First redux action'
+            }
+        }
+
+        // (previousState, action) => newState
+
+        const reducer = (state = initialState, action) => {
+            switch (action.type) {
+                case BUY_CAKE: return {
+                    ...state,
+                    numOfCakes: state.numOfCakes - 1
+                }
+
+                default: return state
+            }
+        }
+
+        const store = createStore(reducer)
+        console.log('initial state', store.getState())
+        const unsubscribe = store.subscribe(() => console.log('updated state', store.getState()))
+        store.dispatch(buyCake())
+        store.dispatch(buyCake())
+        store.dispatch(buyCake())
+        unsubscribe()
+    }
+
+
+    render() {
+        return (
+            <div>
+
+            </div>
+        )
     }
 }
 
-const store = createStore(reducer)
+export default Cake
