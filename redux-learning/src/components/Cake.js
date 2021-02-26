@@ -1,3 +1,6 @@
+import redux from 'react-redux'
+const createStore = redux.createStore()
+
 const BUY_CAKE = 'BUY_CAKE'
 
 function buyCake() {
@@ -14,7 +17,7 @@ const initialState = {
 }
 
 const reducer = (state = initialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case BUY_CAKE: return {
             ...state,
             numOfCakes: state.numOfCakes - 1
@@ -23,3 +26,5 @@ const reducer = (state = initialState, action) => {
         default: return state
     }
 }
+
+const store = createStore(reducer)
